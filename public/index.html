@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>renc | Luxury Car Rental in Italy</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Plus Jakarta Sans & Syne -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#E5C19C',
+                            goldHover: '#d9b088',
+                            darkGreen: '#1e2d27',
+                            darkGreenLight: '#283c34',
+                            bgDark: '#0D0E10',
+                            cardDark: '#16181C',
+                            cardLight: '#F7F6F2',
+                            textDark: '#121212',
+                            textMuted: '#8E8E93'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles & animations */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0D0E10;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .font-display {
+            font-family: 'Syne', sans-serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0D0E10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #283c34;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E5C19C;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-dark {
+            background: rgba(13, 14, 16, 0.75);
+            backdrop-filter: blur(16px);
+        }
+        /* Chatbot bounce badge */
+        @keyframes pulse-subtle {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .pulse-btn {
+            animation: pulse-subtle 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-brand-bgDark text-gray-100 antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 glass-dark border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="font-display text-3xl font-extrabold tracking-wider text-white hover:text-brand-gold transition">
+                renc<span class="text-brand-gold">.</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-brand-gold transition duration-200">About</a>
+                <a href="#vehicles" class="hover:text-brand-gold transition duration-200">Vehicles</a>
+                <a href="#best-offer" class="hover:text-brand-gold transition duration-200">Booking</a>
+                <a href="#blog" class="hover:text-brand-gold transition duration-200">Blog</a>
+                <a href="#contacts" class="hover:text-brand-gold transition duration-200">Contacts</a>
+            </nav>
+
+            <!-- Language & User Profile -->
+            <div class="flex items-center space-x-4">
+                <button class="flex items-center space-x-1.5 text-xs bg-white/10 px-3 py-1.5 rounded-full hover:bg-white/20 transition">
+                    <span class="inline-block w-4 h-4 rounded-full bg-blue-600 text-white text-[9px] flex items-center justify-center font-bold">🇬🇧</span>
+                    <span class="font-medium tracking-wider">ENG</span>
+                    <i class="fa-solid fa-chevron-down text-[10px] opacity-70"></i>
+                </button>
+                <button class="w-10 h-10 rounded-full bg-white/10 hover:bg-brand-gold hover:text-black flex items-center justify-center transition duration-300 border border-white/10">
+                    <i class="fa-regular fa-user text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
+        <!-- Background Decorative Blur & Road Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=2070&auto=format&fit=crop" alt="Italian villa road background" class="w-full h-full object-cover opacity-25 filter brightness-50">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-bgDark/60 via-brand-bgDark/80 to-brand-bgDark"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Left Hero Content -->
+                <div class="lg:col-span-7">
+                    <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6">
+                        Luxury car <br>
+                        rental in <span class="italic font-light text-brand-gold">Italy</span>
+                    </h1>
+                    <p class="text-gray-300 max-w-lg mb-8 text-sm sm:text-base leading-relaxed">
+                        Experience the ultimate Italian road journey in elegance and high performance. Handcrafted comfort tailored to your signature lifestyle.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <a href="#vehicles" class="bg-brand-gold text-black font-semibold px-8 py-3.5 rounded-xl hover:bg-brand-goldHover transition duration-300 shadow-lg shadow-brand-gold/20 flex items-center space-x-2">
+                            <span>Rent Now</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Hero Floating Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="glass-card rounded-2xl p-4 sm:p-5 relative overflow-hidden group border border-white/15 shadow-2xl">
+                        <!-- Price Badge -->
+                        <div class="absolute top-6 left-6 z-10 bg-black/70 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10 text-xs font-semibold">
+                            <span class="text-brand-gold">$1,500</span> / day
+                        </div>
+                        <button class="absolute top-6 right-6 z-10 w-8 h-8 rounded-full bg-white/20 hover:bg-brand-gold hover:text-black flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                        
+                        <div class="overflow-hidden rounded-xl h-60 sm:h-64 mb-4">
+                            <img src="https://images.unsplash.com/photo-1631295868223-63265b40d9e4?q=80&w=1000&auto=format&fit=crop" alt="Rolls Royce Dawn" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <p class="text-xs text-gray-400 line-clamp-2">
+                            Handcrafted luxury and peerless presence. Discover Italian coastlines in the quintessential Rolls Royce Dawn.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOKING SEARCH BAR -->
+            <div class="mt-12 bg-white text-black rounded-2xl p-4 sm:p-6 shadow-2xl">
+                <div class="flex items-center space-x-4 mb-4 border-b border-gray-200 pb-3">
+                    <button class="px-4 py-1.5 rounded-full text-xs font-bold bg-black text-white">Distance</button>
+                    <button class="px-4 py-1.5 rounded-full text-xs font-semibold text-gray-600 hover:bg-gray-100">Hourly</button>
+                </div>
+                
+                <form onsubmit="event.preventDefault(); alert('Pencarian mobil sedang diproses...');" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Pick Up Address</label>
+                        <input type="text" placeholder="Rome address, airport, hotel..." class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-xs font-medium focus:outline-none focus:border-brand-gold">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Drop Off Address</label>
+                        <input type="text" placeholder="Florence, Hourly, Tow Rate" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-xs font-medium focus:outline-none focus:border-brand-gold">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Pick Up Date</label>
+                        <input type="date" value="2026-10-15" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-xs font-medium focus:outline-none focus:border-brand-gold">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Pick Up Time</label>
+                        <input type="time" value="10:00" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-xs font-medium focus:outline-none focus:border-brand-gold">
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-brand-gold hover:bg-brand-goldHover text-black font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center space-x-2 transition duration-200 shadow-md">
+                            <i class="fa-regular fa-calendar-check"></i>
+                            <span>Book Now</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="py-20 bg-brand-cardDark border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Column -->
+                <div class="lg:col-span-6 space-y-6">
+                    <h2 class="font-display text-4xl sm:text-5xl font-bold tracking-tight">About Us</h2>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        At renc, we provide unparalleled luxury car rental services across Rome, Florence, Milan, and the Amalfi Coast. From grand tourers to high-performance supercars, every vehicle is curated for discerning travelers.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Enjoy door-to-door concierge delivery, comprehensive VIP insurance coverage, and 24/7 dedicated support throughout your journey in Italy.
+                    </p>
+                </div>
+
+                <!-- Grid Images & Experience Badge -->
+                <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+                    <div class="col-span-1 rounded-2xl overflow-hidden h-64 border border-white/10">
+                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=800&auto=format&fit=crop" alt="Luxury Car Front" class="w-full h-full object-cover">
+                    </div>
+                    <div class="col-span-1 space-y-4">
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+                            <span class="font-display text-3xl sm:text-4xl font-extrabold text-brand-gold block mb-1">+10 years</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-400">Experience</span>
+                        </div>
+                        <div class="rounded-2xl overflow-hidden h-36 border border-white/10">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop" alt="Convertible luxury car" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEST OFFER SECTION -->
+    <section id="best-offer" class="py-16 bg-brand-darkGreen relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5 space-y-4 z-10">
+                    <h2 class="font-display text-4xl sm:text-5xl font-bold">Best offer</h2>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">Bentley Flying Spur</h3>
+                        <p class="text-gray-300 text-sm mt-1">for <span class="text-brand-gold font-bold text-xl">$400</span> / day</p>
+                    </div>
+                    <a href="#vehicles" class="inline-block bg-brand-gold text-black font-semibold px-8 py-3 rounded-xl hover:bg-brand-goldHover transition text-sm">
+                        Rent Now
+                    </a>
+                </div>
+                <div class="lg:col-span-7 relative z-10 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1000&auto=format&fit=crop" alt="Bentley Flying Spur" class="w-full max-w-xl object-contain filter drop-shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VEHICLES SECTION (SULTAN & LUXURY FLEET) -->
+    <section id="vehicles" class="py-20 bg-brand-cardLight text-brand-textDark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10">
+                <div>
+                    <div class="inline-flex items-center space-x-2 bg-brand-gold/20 text-brand-textDark px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+                        <i class="fa-solid fa-crown text-amber-600"></i>
+                        <span>Ultra-Luxury & Sultan Class Collection</span>
+                    </div>
+                    <h2 class="font-display text-4xl sm:text-5xl font-bold tracking-tight">Armada Mobil Mewah Sultan</h2>
+                    <p class="text-gray-500 text-xs sm:text-sm mt-2 max-w-xl">
+                        Koleksi supercar, hypercar, dan limusin paling bergengsi di dunia. Disediakan khusus untuk kalangan sultan, pebisnis, dan selebriti dengan standar VIP tiada tanding di Italia.
+                    </p>
+                </div>
+                <div class="mt-4 md:mt-0 text-xs text-gray-500 font-medium">
+                    <span class="text-black font-bold">12 Unit</span> Armada Tersedia &bull; Free VIP Concierge Delivery
+                </div>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap gap-2 mb-10 border-b border-gray-200 pb-4">
+                <button onclick="filterFleet('all', this)" class="fleet-filter-btn active-filter px-5 py-2 rounded-full text-xs font-bold bg-black text-white transition shadow-sm">
+                    Semua Armada (12)
+                </button>
+                <button onclick="filterFleet('hypercar', this)" class="fleet-filter-btn px-5 py-2 rounded-full text-xs font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-gray-100 transition">
+                    👑 Sultan Hypercars
+                </button>
+                <button onclick="filterFleet('limousine', this)" class="fleet-filter-btn px-5 py-2 rounded-full text-xs font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-gray-100 transition">
+                    💎 Royal Limousines & VIP
+                </button>
+                <button onclick="filterFleet('suv-gt', this)" class="fleet-filter-btn px-5 py-2 rounded-full text-xs font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-gray-100 transition">
+                    🛡️ Ultra-Luxury SUVs & GT
+                </button>
+            </div>
+
+            <!-- Cards Grid -->
+            <div id="fleet-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- 1. BUGATTI CHIRON PUR SPORT -->
+                <div class="fleet-card bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group" data-category="hypercar">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-crown text-[9px]"></i> Sultan Apex
+                            </span>
+                            <span class="text-[11px] font-semibold text-gray-400">W16 8.0L</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-black group-hover:text-amber-700 transition">Bugatti Chiron Pur Sport</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                            <span class="font-bold text-black text-base">$4,500</span> <span class="text-[11px]">/ hari</span>
+                        </p>
+                        
+                        <div class="my-5 h-40 flex items-center justify-center overflow-hidden rounded-xl bg-gray-50">
+                            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=800&auto=format&fit=crop" alt="Bugatti Chiron" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
+                        </div>
+
+                        <!-- Specs Pills -->
+                        <div class="grid grid-cols-3 gap-1.5 mb-4 text-[11px] text-gray-600 text-center">
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">1,500 HP</span> Tenaga</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">2.3s</span> 0-100 km/h</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">380 km/h</span> Top Speed</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-gray-100 flex items-center gap-2">
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya berminat sewa Bugatti Chiron Pur Sport ($4,500/hari). Apa saja syarat deposit dan apakah termasuk layanan pengawalan?')" class="flex-1 bg-black hover:bg-gray-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition">
+                            <i class="fa-solid fa-sparkles text-brand-gold text-[11px]"></i>
+                            <span>Tanya AI</span>
+                        </button>
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya ingin langsung booking Bugatti Chiron Pur Sport untuk penjemputan di Roma.')" class="w-10 h-10 rounded-xl bg-brand-gold hover:bg-brand-goldHover text-black flex items-center justify-center transition" title="Booking Sekarang">
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2. ROLLS-ROYCE PHANTOM VIII EXTENDED -->
+                <div class="fleet-card bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group" data-category="limousine">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-purple-100 text-purple-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-gem text-[9px]"></i> The King
+                            </span>
+                            <span class="text-[11px] font-semibold text-gray-400">V12 Twin-Turbo</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-black group-hover:text-purple-700 transition">Rolls-Royce Phantom VIII</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                            <span class="font-bold text-black text-base">$2,200</span> <span class="text-[11px]">/ hari (Plus Chauffeur)</span>
+                        </p>
+                        
+                        <div class="my-5 h-40 flex items-center justify-center overflow-hidden rounded-xl bg-gray-50">
+                            <img src="https://images.unsplash.com/photo-1631295868223-63265b40d9e4?q=80&w=800&auto=format&fit=crop" alt="Rolls-Royce Phantom" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
+                        </div>
+
+                        <!-- Specs Pills -->
+                        <div class="grid grid-cols-3 gap-1.5 mb-4 text-[11px] text-gray-600 text-center">
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">563 HP</span> V12 6.75L</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">Starlight</span> Headliner</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">Chauffeur</span> Gratis</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-gray-100 flex items-center gap-2">
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Berapa biaya dan fasilitas supir pribadi untuk sewa Rolls-Royce Phantom VIII di Roma/Milan?')" class="flex-1 bg-black hover:bg-gray-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition">
+                            <i class="fa-solid fa-sparkles text-brand-gold text-[11px]"></i>
+                            <span>Tanya AI</span>
+                        </button>
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya ingin booking Rolls-Royce Phantom VIII dengan supir pribadi.')" class="w-10 h-10 rounded-xl bg-brand-gold hover:bg-brand-goldHover text-black flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3. LAMBORGHINI REVUELTO V12 -->
+                <div class="fleet-card bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group" data-category="hypercar">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-yellow-100 text-yellow-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-bolt text-[9px]"></i> V12 Hybrid
+                            </span>
+                            <span class="text-[11px] font-semibold text-gray-400">1,015 HP</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-black group-hover:text-yellow-700 transition">Lamborghini Revuelto V12</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                            <span class="font-bold text-black text-base">$1,800</span> <span class="text-[11px]">/ hari</span>
+                        </p>
+                        
+                        <div class="my-5 h-40 flex items-center justify-center overflow-hidden rounded-xl bg-gray-50">
+                            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=800&auto=format&fit=crop" alt="Lamborghini Revuelto" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
+                        </div>
+
+                        <!-- Specs Pills -->
+                        <div class="grid grid-cols-3 gap-1.5 mb-4 text-[11px] text-gray-600 text-center">
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">1,015 HP</span> V12 + 3 E-Motor</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">2.5s</span> 0-100 km/h</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">350 km/h</span> Top Speed</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-gray-100 flex items-center gap-2">
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Apakah Lamborghini Revuelto V12 tersedia untuk disewa lepas kunci di Italia?')" class="flex-1 bg-black hover:bg-gray-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition">
+                            <i class="fa-solid fa-sparkles text-brand-gold text-[11px]"></i>
+                            <span>Tanya AI</span>
+                        </button>
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya ingin booking Lamborghini Revuelto V12.')" class="w-10 h-10 rounded-xl bg-brand-gold hover:bg-brand-goldHover text-black flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 4. ROLLS-ROYCE CULLINAN BLACK BADGE -->
+                <div class="fleet-card bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group" data-category="suv-gt">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-neutral-800 text-amber-300 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-shield-halved text-[9px]"></i> Royal SUV
+                            </span>
+                            <span class="text-[11px] font-semibold text-gray-400">All-Terrain V12</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-black group-hover:text-amber-800 transition">Rolls-Royce Cullinan</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                            <span class="font-bold text-black text-base">$1,750</span> <span class="text-[11px]">/ hari</span>
+                        </p>
+                        
+                        <div class="my-5 h-40 flex items-center justify-center overflow-hidden rounded-xl bg-gray-50">
+                            <img src="https://images.unsplash.com/photo-1541348263662-e0c8de4259ba?q=80&w=800&auto=format&fit=crop" alt="Rolls-Royce Cullinan" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
+                        </div>
+
+                        <!-- Specs Pills -->
+                        <div class="grid grid-cols-3 gap-1.5 mb-4 text-[11px] text-gray-600 text-center">
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">600 HP</span> Black Badge</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">AWD</span> All-Terrain</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">5 Kursi</span> VIP Lounge</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-gray-100 flex items-center gap-2">
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Berapa harga sewa Rolls-Royce Cullinan untuk tur pegunungan dan danau Como di Italia?')" class="flex-1 bg-black hover:bg-gray-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition">
+                            <i class="fa-solid fa-sparkles text-brand-gold text-[11px]"></i>
+                            <span>Tanya AI</span>
+                        </button>
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya ingin booking Rolls-Royce Cullinan.')" class="w-10 h-10 rounded-xl bg-brand-gold hover:bg-brand-goldHover text-black flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 5. FERRARI SF90 STRADALE SPIDER -->
+                <div class="fleet-card bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group" data-category="hypercar">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-red-100 text-red-700 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-fire text-[9px]"></i> 1,000 HP Hybrid
+                            </span>
+                            <span class="text-[11px] font-semibold text-gray-400">Spider Open-Top</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-black group-hover:text-red-700 transition">Ferrari SF90 Spider</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                            <span class="font-bold text-black text-base">$1,650</span> <span class="text-[11px]">/ hari</span>
+                        </p>
+                        
+                        <div class="my-5 h-40 flex items-center justify-center overflow-hidden rounded-xl bg-gray-50">
+                            <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop" alt="Ferrari SF90" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
+                        </div>
+
+                        <!-- Specs Pills -->
+                        <div class="grid grid-cols-3 gap-1.5 mb-4 text-[11px] text-gray-600 text-center">
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">1,000 HP</span> V8 Twin-Turbo</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">2.5s</span> 0-100 km/h</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">Convertible</span> Retractable Roof</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-gray-100 flex items-center gap-2">
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya ingin sewa Ferrari SF90 Spider untuk rute pesisir Amalfi Coast. Berapa biayanya?')" class="flex-1 bg-black hover:bg-gray-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition">
+                            <i class="fa-solid fa-sparkles text-brand-gold text-[11px]"></i>
+                            <span>Tanya AI</span>
+                        </button>
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya ingin booking Ferrari SF90 Spider.')" class="w-10 h-10 rounded-xl bg-brand-gold hover:bg-brand-goldHover text-black flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 6. MERCEDES-MAYBACH S680 V12 -->
+                <div class="fleet-card bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group" data-category="limousine">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-champagne-glasses text-[9px]"></i> First-Class Suite
+                            </span>
+                            <span class="text-[11px] font-semibold text-gray-400">V12 6.0L Biturbo</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-black group-hover:text-blue-700 transition">Mercedes-Maybach S680</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                            <span class="font-bold text-black text-base">$1,200</span> <span class="text-[11px]">/ hari</span>
+                        </p>
+                        
+                        <div class="my-5 h-40 flex items-center justify-center overflow-hidden rounded-xl bg-gray-50">
+                            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=800&auto=format&fit=crop" alt="Mercedes-Maybach S-Class" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
+                        </div>
+
+                        <!-- Specs Pills -->
+                        <div class="grid grid-cols-3 gap-1.5 mb-4 text-[11px] text-gray-600 text-center">
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">621 HP</span> V12 Biturbo</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">Massage</span> Executive Seats</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">Fridge</span> Champagne Cooler</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-gray-100 flex items-center gap-2">
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Apakah Mercedes-Maybach S680 tersedia untuk penjemputan VIP di bandara Milan Malpensa?')" class="flex-1 bg-black hover:bg-gray-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition">
+                            <i class="fa-solid fa-sparkles text-brand-gold text-[11px]"></i>
+                            <span>Tanya AI</span>
+                        </button>
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya ingin booking Mercedes-Maybach S680.')" class="w-10 h-10 rounded-xl bg-brand-gold hover:bg-brand-goldHover text-black flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 7. ASTON MARTIN DBS SUPERLEGGERA -->
+                <div class="fleet-card bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group" data-category="suv-gt">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-martini-glass text-[9px]"></i> 007 Edition
+                            </span>
+                            <span class="text-[11px] font-semibold text-gray-400">V12 Twin-Turbo</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-black group-hover:text-emerald-700 transition">Aston Martin DBS Volante</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                            <span class="font-bold text-black text-base">$1,100</span> <span class="text-[11px]">/ hari</span>
+                        </p>
+                        
+                        <div class="my-5 h-40 flex items-center justify-center overflow-hidden rounded-xl bg-gray-50">
+                            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=800&auto=format&fit=crop" alt="Aston Martin DBS" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
+                        </div>
+
+                        <!-- Specs Pills -->
+                        <div class="grid grid-cols-3 gap-1.5 mb-4 text-[11px] text-gray-600 text-center">
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">715 HP</span> 5.2L V12</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">3.4s</span> 0-100 km/h</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">Volante</span> Cabriolet GT</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-gray-100 flex items-center gap-2">
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Bagaimana syarat menyewa Aston Martin DBS Superleggera Volante di Florence/Tuscany?')" class="flex-1 bg-black hover:bg-gray-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition">
+                            <i class="fa-solid fa-sparkles text-brand-gold text-[11px]"></i>
+                            <span>Tanya AI</span>
+                        </button>
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya ingin booking Aston Martin DBS Volante.')" class="w-10 h-10 rounded-xl bg-brand-gold hover:bg-brand-goldHover text-black flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 8. PORSCHE 911 GT3 RS (992) -->
+                <div class="fleet-card bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group" data-category="hypercar">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-orange-100 text-orange-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-flag-checkered text-[9px]"></i> Track Weapon
+                            </span>
+                            <span class="text-[11px] font-semibold text-gray-400">Naturally Aspirated</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-black group-hover:text-orange-700 transition">Porsche 911 GT3 RS (992)</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                            <span class="font-bold text-black text-base">$950</span> <span class="text-[11px]">/ hari</span>
+                        </p>
+                        
+                        <div class="my-5 h-40 flex items-center justify-center overflow-hidden rounded-xl bg-gray-50">
+                            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=800&auto=format&fit=crop" alt="Porsche 911 GT3 RS" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
+                        </div>
+
+                        <!-- Specs Pills -->
+                        <div class="grid grid-cols-3 gap-1.5 mb-4 text-[11px] text-gray-600 text-center">
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">525 HP</span> 4.0L Boxer-6</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">9,000</span> RPM Redline</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">DRS Wing</span> Active Aero</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-gray-100 flex items-center gap-2">
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Apakah Porsche 911 GT3 RS bisa disewa untuk driving experience rute sirkuit Monza atau Tuscan hills?')" class="flex-1 bg-black hover:bg-gray-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition">
+                            <i class="fa-solid fa-sparkles text-brand-gold text-[11px]"></i>
+                            <span>Tanya AI</span>
+                        </button>
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya ingin booking Porsche 911 GT3 RS.')" class="w-10 h-10 rounded-xl bg-brand-gold hover:bg-brand-goldHover text-black flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 9. MERCEDES-AMG G63 "KING OF ROAD" -->
+                <div class="fleet-card bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group" data-category="suv-gt">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-stone-200 text-stone-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-shield text-[9px]"></i> VIP Escort
+                            </span>
+                            <span class="text-[11px] font-semibold text-gray-400">4.0L V8 Biturbo</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-black group-hover:text-stone-800 transition">Mercedes-AMG G63</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                            <span class="font-bold text-black text-base">$850</span> <span class="text-[11px]">/ hari</span>
+                        </p>
+                        
+                        <div class="my-5 h-40 flex items-center justify-center overflow-hidden rounded-xl bg-gray-50">
+                            <img src="https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?q=80&w=800&auto=format&fit=crop" alt="Mercedes-AMG G63" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
+                        </div>
+
+                        <!-- Specs Pills -->
+                        <div class="grid grid-cols-3 gap-1.5 mb-4 text-[11px] text-gray-600 text-center">
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">585 HP</span> Biturbo V8</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">4x4²</span> 3 Lock Diff</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">Burmester</span> 3D Audio</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-gray-100 flex items-center gap-2">
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya butuh sewa Mercedes-AMG G63 lengkap dengan layanan supir escort di Roma. Tolong infokan.')" class="flex-1 bg-black hover:bg-gray-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition">
+                            <i class="fa-solid fa-sparkles text-brand-gold text-[11px]"></i>
+                            <span>Tanya AI</span>
+                        </button>
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya ingin booking Mercedes-AMG G63.')" class="w-10 h-10 rounded-xl bg-brand-gold hover:bg-brand-goldHover text-black flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 10. ROLLS-ROYCE DAWN CABRIOLET -->
+                <div class="fleet-card bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group" data-category="limousine">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-water text-[9px]"></i> Riviera Cabriolet
+                            </span>
+                            <span class="text-[11px] font-semibold text-gray-400">V12 Twin-Turbo</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-black group-hover:text-teal-700 transition">Rolls-Royce Dawn</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                            <span class="font-bold text-black text-base">$1,500</span> <span class="text-[11px]">/ hari</span>
+                        </p>
+                        
+                        <div class="my-5 h-40 flex items-center justify-center overflow-hidden rounded-xl bg-gray-50">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop" alt="Rolls-Royce Dawn" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
+                        </div>
+
+                        <!-- Specs Pills -->
+                        <div class="grid grid-cols-3 gap-1.5 mb-4 text-[11px] text-gray-600 text-center">
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">563 HP</span> V12 Engine</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">Drophead</span> Soft-Top</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">Full VIP</span> Insurance</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-gray-100 flex items-center gap-2">
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Berapa harga sewa Rolls-Royce Dawn untuk keliling danau Como / Portofino?')" class="flex-1 bg-black hover:bg-gray-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition">
+                            <i class="fa-solid fa-sparkles text-brand-gold text-[11px]"></i>
+                            <span>Tanya AI</span>
+                        </button>
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya ingin booking Rolls-Royce Dawn.')" class="w-10 h-10 rounded-xl bg-brand-gold hover:bg-brand-goldHover text-black flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 11. MCLAREN 720S SPIDER -->
+                <div class="fleet-card bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group" data-category="hypercar">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-amber-100 text-amber-900 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-wind text-[9px]"></i> Super Series
+                            </span>
+                            <span class="text-[11px] font-semibold text-gray-400">4.0L Twin-Turbo</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-black group-hover:text-amber-800 transition">McLaren 720s Spider</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                            <span class="font-bold text-black text-base">$420</span> <span class="text-[11px]">/ hari</span>
+                        </p>
+                        
+                        <div class="my-5 h-40 flex items-center justify-center overflow-hidden rounded-xl bg-gray-50">
+                            <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=800&auto=format&fit=crop" alt="McLaren 720s" class="object-contain w-full h-full group-hover:scale-105 transition duration-500">
+                        </div>
+
+                        <!-- Specs Pills -->
+                        <div class="grid grid-cols-3 gap-1.5 mb-4 text-[11px] text-gray-600 text-center">
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">720 HP</span> V8 Mid-Engine</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">2.8s</span> 0-100 km/h</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">Dihedral</span> Butterfly Doors</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-gray-100 flex items-center gap-2">
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya ingin sewa McLaren 720s, bagaimana ketersediaannya dan syarat bookingnya?')" class="flex-1 bg-black hover:bg-gray-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition">
+                            <i class="fa-solid fa-sparkles text-brand-gold text-[11px]"></i>
+                            <span>Tanya AI</span>
+                        </button>
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya ingin booking McLaren 720s Spider.')" class="w-10 h-10 rounded-xl bg-brand-gold hover:bg-brand-goldHover text-black flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 12. BENTLEY CONTINENTAL GT V8 -->
+                <div class="fleet-card bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group" data-category="suv-gt">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-gray-200 text-gray-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-crown text-[9px]"></i> Grand Tourer
+                            </span>
+                            <span class="text-[11px] font-semibold text-gray-400">Handcrafted V8</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-black group-hover:text-gray-700 transition">Bentley Continental GT</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                            <span class="font-bold text-black text-base">$380</span> <span class="text-[11px]">/ hari</span>
+                        </p>
+                        
+                        <div class="my-5 h-40 flex items-center justify-center overflow-hidden rounded-xl bg-gray-50">
+                            <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=800&auto=format&fit=crop" alt="Bentley Continental GT" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
+                        </div>
+
+                        <!-- Specs Pills -->
+                        <div class="grid grid-cols-3 gap-1.5 mb-4 text-[11px] text-gray-600 text-center">
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">542 HP</span> Twin-Turbo</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">3.9s</span> 0-100 km/h</div>
+                            <div class="bg-gray-50 p-1.5 rounded-lg border border-gray-100"><span class="font-bold text-black block">Mulliner</span> Nappa Leather</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-gray-100 flex items-center gap-2">
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya ingin sewa Bentley Continental GT V8, bagaimana ketersediaannya?')" class="flex-1 bg-black hover:bg-gray-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition">
+                            <i class="fa-solid fa-sparkles text-brand-gold text-[11px]"></i>
+                            <span>Tanya AI</span>
+                        </button>
+                        <button onclick="window.sendQuickMessage && window.sendQuickMessage('Saya ingin booking Bentley Continental GT V8.')" class="w-10 h-10 rounded-xl bg-brand-gold hover:bg-brand-goldHover text-black flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section id="blog" class="py-20 bg-brand-bgDark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="font-display text-4xl sm:text-5xl font-bold">Blog</h2>
+                <p class="text-gray-400 text-xs sm:text-sm mt-2">
+                    Latest stories, road guides, and automotive lifestyle in Italy.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog 1 -->
+                <div class="group cursor-pointer">
+                    <div class="relative rounded-2xl overflow-hidden h-60 mb-4 border border-white/10">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop" alt="Blog 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full text-[10px] text-brand-gold border border-white/10">23.08.2026</span>
+                        <button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center group-hover:bg-brand-gold group-hover:text-black transition">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                    <h3 class="font-semibold text-base group-hover:text-brand-gold transition line-clamp-1">Scenic Supercar Driving Routes in Tuscany</h3>
+                    <p class="text-xs text-gray-400 mt-2 line-clamp-2">Discover curated driving itineraries winding through cypress groves, vineyards, and medieval towns.</p>
+                </div>
+
+                <!-- Blog 2 -->
+                <div class="group cursor-pointer">
+                    <div class="relative rounded-2xl overflow-hidden h-60 mb-4 border border-white/10">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=800&auto=format&fit=crop" alt="Blog 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full text-[10px] text-brand-gold border border-white/10">20.08.2026</span>
+                        <button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center group-hover:bg-brand-gold group-hover:text-black transition">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                    <h3 class="font-semibold text-base group-hover:text-brand-gold transition line-clamp-1">Grand Touring Across the Amalfi Coast</h3>
+                    <p class="text-xs text-gray-400 mt-2 line-clamp-2">A luxurious guide to navigating coastal cliffs and five-star cliffside retreats in comfort.</p>
+                </div>
+
+                <!-- Blog 3 -->
+                <div class="group cursor-pointer">
+                    <div class="relative rounded-2xl overflow-hidden h-60 mb-4 border border-white/10">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" alt="Blog 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full text-[10px] text-brand-gold border border-white/10">18.08.2026</span>
+                        <button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center group-hover:bg-brand-gold group-hover:text-black transition">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                    <h3 class="font-semibold text-base group-hover:text-brand-gold transition line-clamp-1">Why Choose Private Chauffeur in Rome</h3>
+                    <p class="text-xs text-gray-400 mt-2 line-clamp-2">Effortlessly bypass congested historical zones with an experienced English-speaking Italian driver.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER SECTION -->
+    <section class="py-16 bg-brand-cardDark border-t border-b border-white/5">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-display text-2xl sm:text-4xl font-bold mb-6">
+                Subscribe and get <span class="text-brand-gold">20% off</span> your first rental.
+            </h2>
+            <form onsubmit="event.preventDefault(); alert('Terima kasih telah berlangganan newsletter kami!');" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input type="email" required placeholder="rentexample@gmail.com" class="flex-1 bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold">
+                <button type="submit" class="bg-brand-darkGreen hover:bg-brand-darkGreenLight text-white font-semibold px-6 py-3 rounded-xl text-xs border border-white/10 transition duration-200">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contacts" class="bg-black py-16 text-gray-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <a href="#" class="font-display text-3xl font-extrabold text-white tracking-wider">
+                        renc<span class="text-brand-gold">.</span>
+                    </a>
+                    <p class="leading-relaxed text-gray-500">
+                        Via Catterina 34<br>
+                        Rome, ACC7A00, 9100<br>
+                        0321 0478 90
+                    </p>
+                    <div class="flex space-x-3 text-white">
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-brand-gold hover:text-black flex items-center justify-center transition"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-brand-gold hover:text-black flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-brand-gold hover:text-black flex items-center justify-center transition"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-brand-gold hover:text-black flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- For Renters -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm">For Renters</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">How it works</a></li>
+                        <li><a href="#vehicles" class="hover:text-white transition">Our Fleet</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQ's</a></li>
+                        <li><a href="#contacts" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition">Locations</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#blog" class="hover:text-white transition">Media & Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition">Partners</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Cookies policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Legal information</a></li>
+                        <li><a href="#" class="hover:text-white transition">Help center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Us -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm">Contact Us</h4>
+                    <p class="mb-2">Monday – Sunday<br><span class="text-gray-500">8:00 AM – 9:00 PM (EST)</span></p>
+                    <p class="mb-2">Hotline:<br><span class="text-white font-medium">978-604-3277</span></p>
+                    <p>Email:<br><a href="mailto:drivrenter@gmail.com" class="text-brand-gold hover:underline">drivrenter@gmail.com</a></p>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/10 text-center text-gray-600">
+                <p>&copy; 2026 Renc LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI CHATBOT FEATURE / CS ASSISTANT -->
+    <!-- Floating Trigger Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="chatbot-toggle" onclick="toggleChatbot()" class="pulse-btn bg-brand-gold text-black p-4 rounded-full shadow-2xl hover:bg-brand-goldHover transition duration-300 flex items-center justify-center relative group" aria-label="Buka Chatbot">
+            <i class="fa-solid fa-robot text-xl"></i>
+            <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-green-500 border-2 border-black rounded-full"></span>
+            <!-- Tooltip -->
+            <span class="absolute right-16 bg-black text-white text-[11px] px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition duration-200 pointer-events-none border border-white/10">
+                Tanya Omink Bali Rent AI
+            </span>
+        </button>
+    </div>
+
+    <!-- Chatbot Window -->
+    <div id="chatbot-window" class="fixed bottom-24 right-6 w-80 sm:w-96 bg-brand-cardDark border border-white/15 rounded-2xl shadow-2xl z-50 hidden flex-col overflow-hidden transition-all duration-300">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-brand-darkGreen to-brand-bgDark p-4 border-b border-white/10 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-full bg-brand-gold text-black flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-sparkles text-sm"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-sm text-white flex items-center gap-1.5">
+                        Omink Bali Rent AI
+                        <span class="text-[9px] bg-brand-gold/20 text-brand-gold px-2 py-0.5 rounded-full border border-brand-gold/30">Gemini Live</span>
+                    </h3>
+                    <p class="text-[10px] text-gray-400">Luxury Rental Assistant</p>
+                </div>
+            </div>
+            <button onclick="toggleChatbot()" class="text-gray-400 hover:text-white transition p-1" aria-label="Tutup Chat">
+                <i class="fa-solid fa-xmark text-base"></i>
+            </button>
+        </div>
+
+        <!-- Chat Messages Area -->
+        <div id="chat-messages" class="p-4 h-80 overflow-y-auto space-y-3 text-xs">
+            <!-- Bot Welcome Message -->
+            <div class="flex items-start space-x-2">
+                <div class="w-6 h-6 rounded-full bg-brand-gold text-black flex-shrink-0 flex items-center justify-center text-[10px]">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="bg-white/10 border border-white/10 rounded-2xl rounded-tl-none p-3 text-gray-200 max-w-[85%] leading-relaxed">
+                    Halo! Selamat datang di <strong>Omink Bali Rent</strong>. Saya AI Concierge Anda. Ada yang bisa saya bantu terkait sewa armada mewah kami?
+                </div>
+            </div>
+
+            <!-- Quick Suggestions -->
+            <div id="quick-chips" class="pt-2 flex flex-wrap gap-1.5">
+                <button type="button" onclick="sendQuickMessage('Apa saja koleksi mobil kelas sultan termahal yang tersedia?')" class="bg-white/5 hover:bg-brand-gold hover:text-black border border-white/10 rounded-full px-3 py-1 text-[11px] text-gray-300 transition">
+                    👑 Mobil Sultan Termahal
+                </button>
+                <button type="button" onclick="sendQuickMessage('Berapa harga dan syarat sewa Bugatti Chiron Pur Sport?')" class="bg-white/5 hover:bg-brand-gold hover:text-black border border-white/10 rounded-full px-3 py-1 text-[11px] text-gray-300 transition">
+                    🏎️ Bugatti Chiron
+                </button>
+                <button type="button" onclick="sendQuickMessage('Apakah sewa Rolls-Royce Phantom sudah termasuk supir pribadi (chauffeur)?')" class="bg-white/5 hover:bg-brand-gold hover:text-black border border-white/10 rounded-full px-3 py-1 text-[11px] text-gray-300 transition">
+                    💎 Rolls-Royce & Chauffeur
+                </button>
+                <button type="button" onclick="sendQuickMessage('Bagaimana syarat deposit dan pengantaran VIP ke villa/bandara?')" class="bg-white/5 hover:bg-brand-gold hover:text-black border border-white/10 rounded-full px-3 py-1 text-[11px] text-gray-300 transition">
+                    📝 Syarat Deposit & VIP Delivery
+                </button>
+            </div>
+        </div>
+
+        <!-- Chat Input Form -->
+        <form id="chat-form" class="p-3 border-t border-white/10 bg-black/40 flex items-center space-x-2">
+            <input id="user-input" type="text" placeholder="Tanyakan seputar rental..." autocomplete="off" class="flex-1 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold">
+            <button id="chat-submit" type="submit" class="bg-brand-gold hover:bg-brand-goldHover text-black p-2 rounded-xl transition flex items-center justify-center w-8 h-8 disabled:opacity-50">
+                <i class="fa-solid fa-paper-plane text-xs"></i>
+            </button>
+        </form>
+    </div>
+
+    <!-- Frontend Script for Gemini Chatbot -->
+    <script src="script.js"></script>
+</body>
+</html>
